@@ -1,0 +1,38 @@
+.logo {
+  width: 15rem;
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+}
+
+.sidebar {
+  background: #662323;
+}
+
+.selected {
+  color: #e86060;
+  padding-left: 1.35rem;
+  cursor: pointer;
+  border-left-width: 10px;
+  border-left: #e86060;
+  border-left-style: solid;
+  font-size: large;
+}
+.no-selected {
+  color: white;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  font-size: large;
+}
+.no-selected:hover {
+  color: #e86060;
+  border-left-width: 10px;
+  border-left: #e86060;
+  border-left-style: solid;
+}
+.titulo {
+  color: white;
+  padding-left: 1.5rem;
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 1rem;
+}

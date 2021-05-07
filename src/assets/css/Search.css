@@ -1,0 +1,9 @@
+.searchTerm {
+  border: 2px solid #bdbdbd;
+  border-radius: 20px;
+}
+
+.searchIcon {
+  background: #fff;
+  color: #bdbdbd;
+}
