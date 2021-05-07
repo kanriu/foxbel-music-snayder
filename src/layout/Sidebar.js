@@ -159,7 +159,7 @@ const Sidebar = () => {
     >
       <img className="logo" src={logo} alt="logo" />
       <Row>
-        <CardBody className="titulo">Mi librería</CardBody>
+        <CardBody className="titulo">Mi librerías</CardBody>
       </Row>
       <Row>
         <CardBody
