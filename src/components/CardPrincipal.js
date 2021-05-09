@@ -11,21 +11,25 @@ import Adele from "../assets/images/Artists/adele.jpg";
 import { Col, Row, Button } from "antd";
 import "../assets/css/Card.css";
 
-const CardPrincipal = () => {
+const CardPrincipal = ({ albumPrincipal, start, prueba }) => {
   return (
-    <Card>
+    <Card className="card">
       <Row justify="center">
         <Col lg={6} md={8} sm={9}>
-          <CardImg width="100%" src={Adele} alt="adele" />
+          <CardImg
+            width="100%"
+            src={albumPrincipal.imagen === "" ? Adele : albumPrincipal.imagen}
+            alt="adele"
+          />
         </Col>
         <Col lg={15} md={15} sm={15}>
           <CardBody className="body">
             <CardTitle tag="h2" className="title">
-              Adele 21
+              {albumPrincipal.nombreArtista + " " + albumPrincipal.nombreAlbum}
             </CardTitle>
             <CardSubtitle tag="h3" className="subtitle">
               <Row>
-                <Col>Lo mejor de Adele</Col>
+                <Col>Lo mejor de {albumPrincipal.nombreArtista}</Col>
                 <Col className="seguidores">321, 123 seguidores</Col>
               </Row>
             </CardSubtitle>
@@ -36,12 +40,20 @@ const CardPrincipal = () => {
             </CardText>
             <Row>
               <Col lg={4} style={{ marginRight: "1rem" }}>
-                <Button className="btn-reproducir" shape="round">
+                <Button
+                  className="btn-reproducir"
+                  shape="round"
+                  onClick={() => start()}
+                >
                   Reproducir
                 </Button>
               </Col>
               <Col lg={4}>
-                <Button className="btn-seguir" shape="round">
+                <Button
+                  className="btn-seguir"
+                  shape="round"
+                  onClick={() => prueba()}
+                >
                   Seguir
                 </Button>
               </Col>
