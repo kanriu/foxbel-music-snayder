@@ -3,7 +3,7 @@ import { Container, Label } from "reactstrap";
 import CardPrincipal from "../../../components/CardPrincipal";
 import CardSecondary from "../../../components/CardSecondary";
 import { GET_RELEASES, GET_ALBUM } from "../../../config/ApiRest";
-import { DEEZER_CONNECT_LOCAL } from "../../../config/website/Url";
+import { DEEZER_CONNECT_TEST } from "../../../config/website/Url";
 import Axios from "axios";
 import { Row, Col } from "antd";
 import Header from "../../../layout/Header";
@@ -25,7 +25,7 @@ const Recientes = () => {
 
   const getConnect = async () => {
     try {
-      let res = await Axios.get(DEEZER_CONNECT_LOCAL + code);
+      let res = await Axios.get(DEEZER_CONNECT_TEST + code);
       let response = await res.data;
       console.log(response);
       getRecientes(response);

@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../layout/Sidebar";
 import { Layout } from "antd";
-import { DEEZER_LOCAL_URL } from "../config/website/Url";
+import { DEEZER_TEST_URL } from "../config/website/Url";
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,7 +37,7 @@ export const RouterPage = () => {
                 <Route
                   path="/autenticacion"
                   component={() => {
-                    window.location.href = DEEZER_LOCAL_URL;
+                    window.location.href = DEEZER_TEST_URL;
                     return null;
                   }}
                 />
