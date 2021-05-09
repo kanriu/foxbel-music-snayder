@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../layout/Sidebar";
 import { Layout } from "antd";
-import { DEEZER_TEST_URL } from "../config/website/Url";
+import { DEEZER_LOCAL_URL } from "../config/website/Url";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,8 +11,11 @@ import {
 
 import Recientes from "./libreria/recientes/Recientes";
 import Artistas from "./libreria/artistas/Artistas";
+import Footer from "../layout/Footer";
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
 
-const { Content, Footer } = Layout;
+const { Content } = Layout;
 
 export const RouterPage = () => {
   return (
@@ -20,29 +23,31 @@ export const RouterPage = () => {
       <Layout>
         <Sidebar />
         <Layout className="site-layout">
-          <Content
-            style={{
-              paddingLeft: "2.1rem",
-              paddingRight: "2.1rem",
-              backgroundColor: "white",
-            }}
-          >
-            <Switch>
-              <Route path="/recientes" component={Recientes} />
-              <Route path="/artistas" component={Artistas} />
-              <Route
-                path="/autenticacion"
-                component={() => {
-                  window.location.href = DEEZER_TEST_URL;
-                  return null;
-                }}
-              />
-              <Redirect to="/recientes" />
-            </Switch>
-          </Content>
+          <PerfectScrollbar style={{ backgroundColor: "white" }}>
+            <Content
+              style={{
+                paddingLeft: "2.1rem",
+                paddingRight: "2.1rem",
+                height: "calc(100vh - 80px)",
+              }}
+            >
+              <Switch>
+                <Route path="/recientes" component={Recientes} />
+                <Route path="/artistas" component={Artistas} />
+                <Route
+                  path="/autenticacion"
+                  component={() => {
+                    window.location.href = DEEZER_LOCAL_URL;
+                    return null;
+                  }}
+                />
+                <Redirect to="/recientes" />
+              </Switch>
+            </Content>
+          </PerfectScrollbar>
         </Layout>
       </Layout>
-      <Footer>footer</Footer>
+      <Footer />
     </Router>
   );
 };
